@@ -38,16 +38,45 @@ array_shift($fruits);
 
 // array split 
 $chunk_array = array_chunk($fruits, 2);
-print_r($chunk_array);
-print_r($fruits);
+// print_r($chunk_array);
+// print_r($fruits);
 
 // concat
 
 $arr = [1,2,3,5];
 $arrs = [2,4,5,6];
 
-$arrays = array_merge($arr, $arrs);
-$arrays2 = [...$arr, ...$arrs];
+// $arrays = array_merge($arr, $arrs);
+// $arrays2 = [...$arr, ...$arrs];
 
-print_r($arrays2);
-print_r($arrays);
+// print_r($arrays2);
+// print_r($arrays);
+
+// map
+$numbers = range(1, 20);
+//print_r($numbers);
+$newNumbers = array_map(function($number){
+     return "Number $number";
+}, $numbers);
+
+//print_r($newNumbers);
+// filter
+$lessThan10 = array_filter($numbers, fn($number) => 
+    $number <= 10
+);
+
+//print_r($lessThan10);
+
+
+//reduce 
+$sum = array_reduce($numbers, fn($carry, $number) => $carry + $number);
+//var_dump($sum);
+
+
+
+// string function 
+$string = "hello world";
+
+//echo strlen($string);
+//echo strpos($string, "o");
+
